@@ -63,7 +63,8 @@ Claude asks about your role, projects, tech stack, and preferences, then builds:
 ~/.claude/.../memory/
 ├── MEMORY.md                   ← index of everything Claude remembers
 ├── user_profile.md             ← your role, expertise, preferences
-└── feedback_preferences.md     ← things Claude should always/never do
+├── feedback_preferences.md     ← things Claude should always/never do
+└── feedback_health_check.md    ← pre-session build check
 ```
 
 **Settings** — global instructions and configuration wired up automatically.
@@ -75,6 +76,12 @@ The system grows with you:
 - As you work on projects, context accumulates in project overviews and memory
 - You can add **skills** (reusable prompt templates) and **books** (reference libraries) as your needs grow
 - After a month, Claude knows your stack, your style, and your projects well enough to be genuinely useful
+
+### Health Check
+
+One built-in behavior ships with every install: before writing code in a project, Claude runs a quick health check (`npm run build`, `cargo check`, or whatever your project uses) to verify the baseline is clean. This catches broken deps, stale env, and half-finished migrations before you're deep into new work.
+
+Each project overview has a `## Health Check` section where you define the command. Claude skips the check for quick edits, planning, or read-only tasks — it only runs when you're about to write code and it's been a while since the last session.
 
 ## What's Private?
 

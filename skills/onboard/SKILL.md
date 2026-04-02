@@ -103,7 +103,8 @@ Creating:
   ~/.claude/.../memory/
   ├── MEMORY.md
   ├── user_profile.md
-  └── feedback_preferences.md
+  ├── feedback_preferences.md
+  └── feedback_health_check.md
 ```
 
 Then create everything immediately:
@@ -182,6 +183,13 @@ Each register inherits this core voice and adapts it for a specific audience.
 
 ## Status
 Active — added during onboarding
+
+## Health Check
+<!-- The command Claude should run before a coding session to verify the baseline is clean -->
+<!-- Examples: npm run build, npm run dev, cargo check, go build ./... -->
+```bash
+# TODO: add your health check command
+```
 
 ## Key Decisions
 <!-- Add architectural decisions, design choices, etc. as you work -->
@@ -269,6 +277,7 @@ Run `whoami` and construct the path accordingly. Create the directory if it does
 ## Preferences
 {- Feedback preferences link if Q7 had answers}
 - See: `feedback_preferences.md`
+- `feedback_health_check.md` — run build/dev check before coding sessions; skip for quick edits or read-only tasks
 
 ## KB Structure
 - Vault: `{$KB_PATH}`
@@ -299,6 +308,25 @@ type: feedback
 ---
 
 {Each pet peeve from Q7 as a bullet point, framed as a clear instruction}
+```
+
+**Always create feedback_health_check.md** (this is a built-in best practice, not user-dependent):
+```markdown
+---
+name: feedback_health_check
+description: Run a build/dev-server check before coding sessions on projects, but skip for quick edits, planning, or read-only tasks
+type: feedback
+---
+
+Before writing code in a project, run a quick health check (build or dev server) to verify the baseline is clean.
+
+**Why:** Catches drift between sessions — broken deps, stale env, half-finished migrations — before you're deep into new work.
+
+**How to apply:**
+- **Do it** when: feature work or refactoring, days since last session, active dependency churn
+- **Skip it** when: quick config/content/copy edits, just worked on the project last session, read-only tasks (analysis, planning, writing, reviews)
+- Keep it lightweight — one command (`npm run dev`, `npm run build`, or equivalent), not a full test suite
+- If the check surfaces errors, flag them before starting the requested task
 ```
 
 #### 5d — Symlinks
@@ -364,6 +392,7 @@ Done! Here's your workspace:
   MEMORY.md .................. context index
   user_profile.md ............ your profile memory
   feedback_preferences.md .... your preferences
+  feedback_health_check.md ... pre-session build check
 
 **Symlinks**
   claude-memory/ → memory system
