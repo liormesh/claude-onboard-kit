@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Claude Onboard Kit — Installer
-# One-liner: git clone https://github.com/liormesh/claude-onboard-kit /tmp/claude-onboard-kit && /tmp/claude-onboard-kit/install.sh
+# Trestle — Installer
+# One-liner: git clone https://github.com/liormesh/trestle /tmp/trestle && /tmp/trestle/install.sh
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 CLAUDE_DIR="$HOME/.claude"
 SKILLS_DIR="$CLAUDE_DIR/skills"
 
 echo ""
-echo "  Claude Onboard Kit"
+echo "  Trestle"
 echo "  ─────────────────"
 echo ""
 echo "  Installing to: $CLAUDE_DIR"

@@ -1,4 +1,4 @@
-# Claude Onboard Kit
+# Trestle
 
 The setup tool I wish existed when I started building with Claude Code.
 
@@ -6,7 +6,7 @@ Most people install Claude Code and start chatting. That works — for about a w
 
 The fix isn't a better prompt. It's a better workspace.
 
-**Claude Onboard Kit** is an interactive setup tool that builds your personal AI workspace in 5 minutes. It asks who you are, what you build, and how you like to work — then scaffolds a knowledge base, memory system, and profile that makes every conversation smarter than the last.
+**Trestle** is an interactive setup tool that builds your personal AI workspace in 5 minutes. It asks who you are, what you build, and how you like to work — then scaffolds a knowledge base, memory system, and profile that makes every conversation smarter than the last.
 
 ## Quick Start
 
@@ -18,7 +18,7 @@ The fix isn't a better prompt. It's a better workspace.
 ### Install
 
 ```bash
-git clone https://github.com/liormesh/claude-onboard-kit /tmp/claude-onboard-kit && /tmp/claude-onboard-kit/install.sh
+git clone https://github.com/liormesh/trestle /tmp/trestle && /tmp/trestle/install.sh
 ```
 
 This copies one skill and one file to `~/.claude/`. That's it — [read the script](install.sh), it's 30 lines.
@@ -104,7 +104,7 @@ If you ever need to share specific files publicly, copy them out rather than mak
 
 ## Compatibility
 
-Tested with Claude Code v2.1.x on macOS and Linux. The knowledge base is standard markdown — if Claude Code's internals change, your content is safe. If something breaks after an update, [open an issue](https://github.com/liormesh/claude-onboard-kit/issues).
+Tested with Claude Code v2.1.x on macOS and Linux. The knowledge base is standard markdown — if Claude Code's internals change, your content is safe. If something breaks after an update, [open an issue](https://github.com/liormesh/trestle/issues).
 
 ## Re-running
 

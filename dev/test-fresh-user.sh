@@ -14,7 +14,7 @@ set -euo pipefail
 TEST_HOME="/tmp/claude-onboard-test"
 
 echo ""
-echo "  Claude Onboard Kit — Test Mode"
+echo "  Trestle — Test Mode"
 echo "  Test HOME: $TEST_HOME"
 echo ""
 
@@ -46,7 +46,7 @@ echo "  Install script works correctly."
 echo ""
 echo "  To test the full /onboard flow:"
 echo "    1. Have your friend run:"
-echo "       git clone https://github.com/liormesh/claude-onboard-kit /tmp/claude-onboard-kit && /tmp/claude-onboard-kit/install.sh"
+echo "       git clone https://github.com/liormesh/trestle /tmp/trestle && /tmp/trestle/install.sh"
 echo "    2. Then open Claude Code and type /onboard"
 echo ""
 echo "  Cleaning up test..."

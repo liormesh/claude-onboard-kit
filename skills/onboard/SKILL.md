@@ -247,7 +247,7 @@ else (your role, projects, communication style) is in the repo.
 If you need to share specific files publicly, copy them out rather than making the repo public.
 
 ## Setup
-Created with [Claude Onboard Kit](https://github.com/liormesh/claude-onboard-kit).
+Created with [Trestle](https://github.com/liormesh/trestle).
 ```
 
 #### 5c — Memory System
