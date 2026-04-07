@@ -437,6 +437,19 @@ If `~/.claude/settings.json` doesn't exist, create it:
 ```json
 {
   "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Bash(git push * --force *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -f*)",
+      "Bash(DROP TABLE *)",
+      "Bash(DROP DATABASE *)"
+    ],
     "additionalDirectories": [
       "{$KB_PATH}",
       "/tmp"
@@ -445,7 +458,10 @@ If `~/.claude/settings.json` doesn't exist, create it:
 }
 ```
 
-If it already exists, check if `$KB_PATH` is in `additionalDirectories`. If not, add it. Don't overwrite other settings.
+If it already exists:
+- Check if `$KB_PATH` is in `additionalDirectories`. If not, add it.
+- Check if a `deny` list exists. If not, add the baseline deny list above. If one exists, merge any missing entries without removing the user's existing rules.
+- Don't overwrite other settings.
 
 #### 5f — Update CLAUDE.md
 
